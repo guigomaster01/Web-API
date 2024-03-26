@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="FilmeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="FilmeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="tb_Filme">
           <Key>
             <PropertyRef Name="Codigo" />
@@ -15,11 +15,20 @@
           <Property Name="Genero" Type="varchar" MaxLength="50" />
           <Property Name="Produtora" Type="varchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Senha" Type="varchar" MaxLength="50" />
+          <Property Name="UltimoAcesso" Type="datetime" />
+        </EntityType>
         <EntityContainer Name="FilmeModelStoreContainer">
           <EntitySet Name="tb_Filme" EntityType="Self.tb_Filme" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FilmeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -35,7 +44,17 @@
         </EntityType>
         <EntityContainer Name="Somee" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="tb_Filme" EntityType="Self.tb_Filme" />
+          <EntitySet Name="Usuario" EntityType="FilmeModel.Usuario" />
         </EntityContainer>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Senha" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UltimoAcesso" Type="DateTime" Precision="3" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -50,6 +69,16 @@
                 <ScalarProperty Name="Ano" ColumnName="Ano" />
                 <ScalarProperty Name="Genero" ColumnName="Genero" />
                 <ScalarProperty Name="Produtora" ColumnName="Produtora" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="FilmeModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="UltimoAcesso" ColumnName="UltimoAcesso" />
+                <ScalarProperty Name="Senha" ColumnName="Senha" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

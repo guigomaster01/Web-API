@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\LabInfo\source\repos\WebApplication1\WebApplication1\Models\EFSomee.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\LabInfo\Source\Repos\Web-API\WebApplication1\Models\EFSomee.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

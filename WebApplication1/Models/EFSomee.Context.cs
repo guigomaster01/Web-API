@@ -26,5 +26,6 @@ namespace WebApplication1.Models
         }
     
         public virtual DbSet<tb_Filme> tb_Filme { get; set; }
+        public virtual DbSet<Usuario> Usuario { get; set; }
     }
 }
