@@ -13,7 +13,7 @@ namespace WebApplication1
             
             bundles.Add(new ScriptBundle("~/bundles/knockout").Include(
                 "~/Scripts/knockout-{version}.js"));
-            bundles.Add(new ScriptBundle("~/bundles/knockout").Include(
+            bundles.Add(new ScriptBundle("~/bundles/usuario").Include(
                 "~/Scripts/ko/usuario.js"));
 
             // Use a versão em desenvolvimento do Modernizr para desenvolver e aprender com ela. Após isso, quando você estiver

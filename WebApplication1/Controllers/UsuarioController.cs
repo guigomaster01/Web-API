@@ -41,6 +41,8 @@ namespace WebApplication1.Controllers
         {
             return View();
         }
+
+        // GET: Usuario/Create
         public ActionResult Api()
         {
             return View();
