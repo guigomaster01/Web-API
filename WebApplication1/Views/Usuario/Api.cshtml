@@ -1,12 +1,23 @@
-﻿@section Scripts{
+﻿@model WebApplication1.Models.Usuario
+
+@section Scripts{
     @Scripts.Render("~/bundles/knockout")
     @Scripts.Render("~/bundles/usuario")
 }
 
+
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        <h4>Usuário</h4>    
+    </div>
+}
 <table>
     <thead>
         <tr>
-            <th>Código </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Codigo)
+            </th>
             <th>Email </th>
             <th>Último Acesso </th>
             <th>Operações</th>

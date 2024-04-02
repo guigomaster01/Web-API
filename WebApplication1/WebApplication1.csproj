@@ -207,6 +207,7 @@
       <LastGenOutput>EFSomee.Context.cs</LastGenOutput>
       <DependentUpon>EFSomee.edmx</DependentUpon>
     </Content>
+    <Content Include="Models\EFSomee.edmx.sql" />
     <Content Include="Models\EFSomee.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>EFSomee.edmx</DependentUpon>
