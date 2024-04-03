@@ -42,7 +42,7 @@ namespace WebApplication1.Controllers
             return View();
         }
 
-        // GET: Usuario/Create
+        // GET: Usuario/API
         public ActionResult Api()
         {
             return View();
